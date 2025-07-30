@@ -1,4 +1,4 @@
-import dotenv
+# import dotenv
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 import os
 import json
@@ -7,8 +7,8 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_chroma import Chroma
 import logging
 
-## Load the environment file
-dotenv.load_dotenv()
+# ## Load the environment file
+# dotenv.load_dotenv()
 
 # Folder containing PDF files
 folder_path = Path("docs")
