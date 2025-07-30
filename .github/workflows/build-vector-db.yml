@@ -9,6 +9,8 @@ on:
 jobs:
   build-db:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # <--- This grants write permission to the GITHUB_TOKEN
 
     steps:
     - name: Checkout repository
