@@ -48,6 +48,7 @@ jobs:
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
+        git remote set-url origin https://tanayrastogi-repo:${{ secrets.GITHUB_TOKEN }}@github.com/tanayrastogi-repo/Website.git
         git add processed_files_record.json chroma_langchain_db/ vecDataHist.txt || true
         git commit -m "GitHub Action: Update vector database, processed files record and add log" || echo "No changes to commit"
         git push
