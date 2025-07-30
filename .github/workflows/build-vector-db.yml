@@ -27,6 +27,17 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Debug Environment Variables
+      run: |
+        echo "Checking environment variables..."
+        echo "GOOGLE_API_KEY_CHECK: ${GOOGLE_API_KEY}"
+        # For security, DO NOT print the full API key
+        # echo "FULL_GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}" # <-- AVOID THIS IN REAL WORKFLOWS
+      # Make sure this step runs before your Python script
+      # and ensure the GOOGLE_API_KEY is available in its env block as well if you place it earlier
+      env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }} # Need to explicitly pass it here too for the debug print
+
     - name: Run vector database build script
       env:
         # Define environment variables used by your script
