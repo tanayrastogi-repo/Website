@@ -19,6 +19,7 @@ folder_path = Path("docs")
 # but sometimes explicit passing is cleaner or necessary depending on library version/setup.
 # Let's ensure it's robust by passing it directly from os.getenv().
 google_api_key = os.getenv("GOOGLE_API_KEY")
+print("GOOGLE_API_KEY_CHECK:", google_api_key)
 if not google_api_key:
     logging.error("GOOGLE_API_KEY environment variable is not set. Cannot initialize Google Generative AI Embeddings.")
     raise ValueError("GOOGLE_API_KEY is missing.")
