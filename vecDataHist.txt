@@ -3,3 +3,8 @@
 2025-07-30 10:10:24 - INFO - Split docs post into 101 sub-documents.
 2025-07-30 10:10:24 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
 2025-07-30 10:10:27 - INFO - Vector database built/updated and saved to chroma_langchain_db/
+2025-07-30 10:17:38 - INFO - New or updated files detected, or Chroma DB not found. Building/updating vector database...
+2025-07-30 10:18:03 - INFO - Loaded 242 pages from all the documents.
+2025-07-30 10:18:03 - INFO - Split docs post into 242 sub-documents.
+2025-07-30 10:18:03 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-30 10:18:09 - INFO - Vector database built/updated and saved to chroma_langchain_db/
