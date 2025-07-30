@@ -31,10 +31,6 @@ jobs:
       run: |
         echo "Checking environment variables..."
         echo "GOOGLE_API_KEY_CHECK: ${GOOGLE_API_KEY}"
-        # For security, DO NOT print the full API key
-        # echo "FULL_GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}" # <-- AVOID THIS IN REAL WORKFLOWS
-      # Make sure this step runs before your Python script
-      # and ensure the GOOGLE_API_KEY is available in its env block as well if you place it earlier
       env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }} # Need to explicitly pass it here too for the debug print
 
@@ -42,8 +38,7 @@ jobs:
       env:
         # Define environment variables used by your script
         # IMPORTANT: For sensitive values like API keys, use GitHub Secrets.
-        # Example: GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-        # Assuming your .env file handles the actual GOOGLE_API_KEY for local runs.
+        GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         PROCESSED_FILES_RECORD: processed_files_record.json # This will be created/updated in the repo
         CHROMA_PERSIST_DIRECTORY: chroma_langchain_db/      # This will be created/updated in the repo
         COLLECTION_NAME: example_collection
